@@ -41,3 +41,24 @@ SELECT COUNT(r.emp_no) AS "count"
 FROM retirement_titles r
 ORDER BY count DESC
 ;
+
+-- get emp_no, name, birth date, employement dates, and title of current employees
+-- born in 1965
+SELECT DISTINCT ON (e.emp_no) e.emp_no
+	,e.first_name
+	,e.last_name
+	,e.birth_date
+	,de.from_date
+	,de.to_date
+	,t.title
+INTO mentorship_eligibility
+FROM employees e
+JOIN dept_emp de
+	ON e.emp_no = de.emp_no
+JOIN titles t
+	ON e.emp_no = t.emp_no
+WHERE e.birth_date BETWEEN '1965-01-01' AND '1965-12-31'
+	AND de.to_date = '9999-01-01'
+ORDER BY e.emp_no
+
+;
