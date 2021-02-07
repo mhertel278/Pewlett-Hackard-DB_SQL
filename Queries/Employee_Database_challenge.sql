@@ -67,3 +67,63 @@ WHERE e.birth_date BETWEEN '1965-01-01' AND '1965-12-31'
 ORDER BY e.emp_no
 
 ;
+
+
+-- -- Exploritory queries
+SELECT * 
+FROM retiring_titles;
+
+SELECT COUNT (emp_no) AS "count"
+	, title
+FROM mentorship_eligibility
+GROUP BY title
+ORDER BY count
+;
+ SELECT COUNT (emp_no)
+ FROM unique_titles;
+ 
+ SELECT COUNT(e.emp_no)
+ FROM employees as e
+ 	JOIN dept_emp as de
+		ON e.emp_no = de.emp_no
+WHERE de.to_date = '9999-01-01'
+;
+
+-- Find the number of mentorhsip eligigble employees per department
+SELECT COUNT (me.emp_no)
+	, d.dept_name
+INTO dept_mentorship
+FROM mentorship_eligibility as me
+	JOIN dept_emp as de
+		ON me.emp_no = de.emp_no
+	JOIN departments as d
+		ON de.dept_no = d.dept_no
+GROUP BY d.dept_name
+ORDER BY count DESC
+;
+
+-- Get the number of employees retiring soon per department
+SELECT COUNT (ut.emp_no)
+	, d.dept_name
+INTO dept_retiring
+FROM unique_titles as ut
+	JOIN dept_emp as de
+		ON ut.emp_no = de.emp_no
+	JOIN departments as d
+		ON de.dept_no = d.dept_no
+GROUP BY d.dept_name
+ORDER BY count DESC
+; 
+
+SELECT *
+FROM dept_mentorship;
+
+-- Compare retiring employees per department with mentorees per departmetn
+SELECT dm.dept_name
+	,dr.count AS "Retirees per Dept"
+	,dm.count AS "Mentorees per Dept"
+FROM dept_mentorship as dm
+	JOIN dept_retiring as dr
+		ON dm.dept_name = dr.dept_name
+ORDER BY dept_name
+;
