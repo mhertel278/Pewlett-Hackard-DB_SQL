@@ -48,7 +48,7 @@ ORDER BY count DESC
 ;
 
 -- get emp_no, name, birth date, employement dates, and title of current employees
--- born in 1965
+-- born in 1965 who are eligible for mentorship
 SELECT DISTINCT ON (e.emp_no) e.emp_no
 	,e.first_name
 	,e.last_name
@@ -126,4 +126,38 @@ FROM dept_mentorship as dm
 	JOIN dept_retiring as dr
 		ON dm.dept_name = dr.dept_name
 ORDER BY dept_name
+;
+
+-- get emp_no, name, birth date, employement dates, and title of current employees
+-- born after 1955 who are not eligible for retirement
+SELECT DISTINCT ON (e.emp_no) e.emp_no
+	,e.first_name
+	,e.last_name
+	,e.birth_date
+	,de.from_date
+	,de.to_date
+	,t.title
+INTO not_retiring_emps
+FROM employees e
+JOIN dept_emp de
+	ON e.emp_no = de.emp_no
+JOIN titles t
+	ON e.emp_no = t.emp_no
+WHERE e.birth_date not BETWEEN '1952-01-01' AND '1955-12-31'
+	AND de.to_date = '9999-01-01'
+ORDER BY e.emp_no
+
+;
+
+-- Get the number of employees not retiring soon per department
+SELECT COUNT (nre.emp_no)
+	, d.dept_name
+INTO dept_not_retiring
+FROM not_retiring_emps as nre
+	JOIN dept_emp as de
+		ON nre.emp_no = de.emp_no
+	JOIN departments as d
+		ON de.dept_no = d.dept_no
+GROUP BY d.dept_name
+ORDER BY count DESC
 ;
