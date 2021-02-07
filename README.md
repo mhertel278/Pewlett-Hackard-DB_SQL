@@ -22,7 +22,7 @@ The company specifically requested a table showing all current employees  within
 
 ![retiring_titles](Resources/retiring_titles.png)
 
-- 1,549 employees fall in the age range making them eligible to be mentored by outgoing retirees as part of the proposed mentorship program
+- 1,549 employees fall in the age range making them eligible to be mentored by outgoing retirees as part of the proposed mentorship program.
 
 
 ## Summary
