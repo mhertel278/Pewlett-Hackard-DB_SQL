@@ -1,4 +1,4 @@
--- Get the names, titles and dates for title heald for employees eligible for retirement
+-- Create retirement_titles table by querying the names, titles and dates for title heald for employees eligible for retirement
 
 SELECT 
 	e.emp_no
@@ -25,7 +25,7 @@ ORDER BY e.emp_no
 ;
 
 
--- Get only the most recent position for each person in the retirement_titles table
+-- Create unique_titles table by querying only the most recent position for each person in the retirement_titles table
 
 SELECT DISTINCT ON (rt.emp_no)
 	rt.emp_no
@@ -38,7 +38,7 @@ ORDER BY rt.emp_no
 	, rt.to_date DESC
 ;
 
--- Get count of retirement eligible employees by title
+-- Create unique_titles table by querying count of retirement eligible employees by title
 SELECT COUNT(ut.emp_no) AS "count"
 	,ut.title
 INTO retiring_titles
@@ -47,7 +47,7 @@ GROUP BY ut.title
 ORDER BY count DESC
 ;
 
--- get emp_no, name, birth date, employement dates, and title of current employees
+-- Create mentorship_eligibility table by querying emp_no, name, birth date, employement dates, and title of current employees
 -- born in 1965 who are eligible for mentorship
 SELECT DISTINCT ON (e.emp_no) e.emp_no
 	,e.first_name
