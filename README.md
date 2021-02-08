@@ -6,7 +6,11 @@ PostgresSQL 11.10, pgAdmin4, departments.csv, employees.csv, dept_emp.csv, dept_
 
 ## Overview
 
+### Purpose of Analysis
+
 The Pewlett-Hackard company has several employees at or nearing retirement age.  They have supplied six csv files from which to construct and employees database.  The purpose of this analysis is to run queries and create additional tables in that database to help prepare for the retiring and replacing of so many employees.
+
+### Specific Tables Requested
 
 The company specifically requested a table showing all current employees within the retirement-eligible age range along with all positions they've held while with the company; a table showing only the current positions held by retiriment-eligible employees so they can get an exact count; a table showing the number of retirees per job title so they can get an idea of the positions needed to be filled; and a table of current employees within a younger age bracket that could participate in a possible mentorship program with outgoing retirees to prepare to replace them.
 
@@ -30,6 +34,8 @@ The company specifically requested a table showing all current employees within 
 In summary, 72,458 employees will be retiring soon and leaving vacancies that will need to be filled.  Many of them have advanced through multiple positions into senior or leadership roles.  Because so many of the vacancies left will be in such key roles, the proposed mentorship program will be a positive step in making sure these vacancies can be filled by quality candidates.  With only 1,549 employees in the age group proposed to be mentored by outgoing retirees, there are more than enough retirees to act as mentors.  Furthermore, there are more than enough retirees to mentor the proposed mentorees within each department, as can be seen here:
 
 ![mentoree comp](Resources/dept_retirees_mentorees.png)
+
+### Recomendation
 
 Because so many employees are retiring, and so few employees fall in the proposed mentorship group, the proposed age range for mentorees could be expanded to allow for more employees to be mentored to fill roles.  As can be seen in this table, the total number of employees not retiring in each department is far greater than those retiring, so that pool of employees should provide more than enough qualified candidates in each department to be mentored and fill vacant roles.
 
