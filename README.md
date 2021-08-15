@@ -12,7 +12,7 @@ The Pewlett-Hackard company has several employees at or nearing retirement age. 
 
 ### Specific Tables Requested
 
-The company specifically requested a table showing all current employees within the retirement-eligible age range along with all positions they've held while with the company; a table showing only the current positions held by retiriment-eligible employees so they can get an exact count; a table showing the number of retirees per job title so they can get an idea of the positions needed to be filled; and a table of current employees within a younger age bracket that could participate in a possible mentorship program with outgoing retirees to prepare to replace them.  The queries necessary to create these tables are shown in the Employees_Database_queries.sql file.
+The company specifically requested a table showing all current employees within the retirement-eligible age range along with all positions they've held while with the company; a table showing only the current positions held by retiriment-eligible employees so they can get an exact count; a table showing the number of retirees per job title so they can get an idea of the positions needed to be filled; and a table of current employees within a younger age bracket that could participate in a possible mentorship program with outgoing retirees to prepare to replace them.  The queries necessary to create these tables are shown in the Employees_Database_queries.sql file in the Queries folder.
 
 ## Results
 
