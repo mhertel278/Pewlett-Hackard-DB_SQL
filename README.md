@@ -8,11 +8,11 @@ PostgresSQL 11.10, pgAdmin4, departments.csv, employees.csv, dept_emp.csv, dept_
 
 ### Purpose of Analysis
 
-The Pewlett-Hackard company has several employees at or nearing retirement age.  They have supplied six csv files from which to construct and employees database.  The purpose of this analysis is to run queries and create additional tables in that database to help prepare for the retiring and replacing of so many employees.
+The Pewlett-Hackard company has several employees at or nearing retirement age.  They have supplied six csv files from which to construct an employees database.  The schema for the database is outlined in the EmployeeDB_Schema.txt file and the queries used to create the tables are listed in the schema.sql file. The purpose of this analysis is to run queries and create additional tables in that database to help prepare for the retiring and replacing of so many employees.
 
 ### Specific Tables Requested
 
-The company specifically requested a table showing all current employees within the retirement-eligible age range along with all positions they've held while with the company; a table showing only the current positions held by retiriment-eligible employees so they can get an exact count; a table showing the number of retirees per job title so they can get an idea of the positions needed to be filled; and a table of current employees within a younger age bracket that could participate in a possible mentorship program with outgoing retirees to prepare to replace them.
+The company specifically requested a table showing all current employees within the retirement-eligible age range along with all positions they've held while with the company; a table showing only the current positions held by retiriment-eligible employees so they can get an exact count; a table showing the number of retirees per job title so they can get an idea of the positions needed to be filled; and a table of current employees within a younger age bracket that could participate in a possible mentorship program with outgoing retirees to prepare to replace them.  The queries necessary to create these tables are shown in the Employees_Database_queries.sql file.
 
 ## Results
 
